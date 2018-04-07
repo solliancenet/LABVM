@@ -1,5 +1,7 @@
+#Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
+#Assign Packages to Install
 $Packages = 'googlechrome',`
             'git.install',`
             'docker-for-windows',`
@@ -7,7 +9,14 @@ $Packages = 'googlechrome',`
             'nodejs.install',`
             'visualstudiocode'
 
+#Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 Add-LocalGroupMember -Member demouser -Group docker-users
-Restart-Computer
+
+#Install Hyper-V and Reboot
+Install-WindowsFeature -Name Hyper-V `
+                       -IncludeAllSubFeature `
+                       -IncludeManagementTools `
+                       -Verbose `
+                       -Restart
