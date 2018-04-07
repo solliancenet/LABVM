@@ -4,7 +4,7 @@
   "parameters": {
     "LABVMDnsName": {
       "type": "string",
-      "defaultValue": "LABVMupdateme",
+      "defaultValue": "labvmdnsnameupdateme",
       "minLength": 1
     }
   },
@@ -26,8 +26,7 @@
     "LABVM-PUBIPName": "[concat(variables('LABVMName'), '-PIP')]",
     "LABVMInstallHyperVScriptFolder": ".",
     "LABVMInstallHyperVScriptFileName": "InstallLabVM.ps1",
-    "LABVMInstallHyperVURL": "https://raw.githubusercontent.com/deltadan/LABVM/master/customscripts/InstallIOT.ps1"
-
+    "LABVMInstallHyperVURL": "https://raw.githubusercontent.com/deltadan/LABVM/master/customscripts/iotlab.ps1"
   },
   "resources": [
     {
