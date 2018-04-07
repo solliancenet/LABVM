@@ -1,4 +1,3 @@
-
 #Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -15,8 +14,5 @@ ForEach ($PackageName in $Packages)
 Add-LocalGroupMember -Member demouser -Group docker-users
 
 #Install Hyper-V and Reboot
-Install-WindowsFeature -Name Hyper-V `
-                       -IncludeAllSubFeature `
-                       -IncludeManagementTools `
-                       -Verbose `
-                       -Restart
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
+Restart-Computer
