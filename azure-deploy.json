@@ -9,9 +9,9 @@
     }
   },
   "variables": {
-    "LABVMVNETPrefix": "10.0.0.0/16",
-    "LABVMVNETSubnet1Name": "VMHOST",
-    "LABVMVNETSubnet1Prefix": "10.0.0.0/24",
+    "LABVMVNETPrefix": "192.168.0.0/24",
+    "LABVMVNETSubnet1Name": "LABVM",
+    "LABVMVNETSubnet1Prefix": "192.168.0.0/24",
     "LABVMName": "LABVM",
     "LABVMAdminUserName": "stormtrooper",
     "LABVMAdminPassword": "Password.1!!",
