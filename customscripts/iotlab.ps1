@@ -9,5 +9,5 @@ $Packages = 'googlechrome',`
 
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
-
+Add-LocalGroupMember -Member demouser -Group docker-users
 Restart-Computer
