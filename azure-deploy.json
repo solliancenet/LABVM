@@ -25,8 +25,8 @@
     "LABVMNicName": "[concat(variables('LABVMName'), '-NIC')]",
     "LABVM-PUBIPName": "[concat(variables('LABVMName'), '-PIP')]",
     "LABVMInstallHyperVScriptFolder": ".",
-    "LABVMInstallHyperVScriptFileName": "InstallLabVMTest.ps1",
-    "LABVMInstallHyperVURL": "https://raw.githubusercontent.com/deltadan/LABVM/master/iotforbiz/InstallLabVMTest.ps1"
+    "LABVMInstallHyperVScriptFileName": "InstallLabVM.ps1",
+    "LABVMInstallHyperVURL": "https://raw.githubusercontent.com/deltadan/LABVM/master/iotforbiz/InstallLabVM.ps1"
   },
   "resources": [
     {
