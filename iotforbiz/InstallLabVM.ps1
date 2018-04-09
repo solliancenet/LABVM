@@ -10,11 +10,22 @@ $Packages = 'googlechrome',`
             'docker-for-windows',`
             'postman',`
             'nodejs.install',`
-            'visualstudiocode'
+            'visualstudiocode',`
+            'git',`
+            'visualstudio2017community',`
+            'visualstudio2017-workload-azure',`
+            'visualstudio2017-workload-manageddesktop',`
+            'visualstudio2017-workload-netweb'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
+
+#Update Visual Studio
+$command = @'
+cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait
+'@
+Invoke-Expression -Command:$command
 
 #Add Demo User to docker group
 Add-LocalGroupMember -Member demouser -Group docker-users
