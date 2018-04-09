@@ -16,7 +16,16 @@ $Packages = 'googlechrome',`
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
-#Add-LocalGroupMember -Member demouser -Group docker-users
+#Add Demo User to docker group
+Add-LocalGroupMember -Member demouser -Group docker-users
+
+#Bring down Desktop Shortcuts
+$zipDownload = "http://YOUR-URL-HERE/FILENAME.ZIP"
+$downloadedFile = "D:\FILENAME.zip"
+$vmFolder = "C:\VM"
+Invoke-WebRequest $zipDownload -OutFile $downloadedFile
+Add-Type -assembly "system.io.compression.filesystem"
+[io.compression.zipfile]::ExtractToDirectory($downloadedFile, $vmFolder)
 
 #Reboot
 Restart-Computer
