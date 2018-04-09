@@ -22,15 +22,15 @@ ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
 #Update Visual Studio
-Set-ExecutionPolicy Bypass -Scope Process -Force
+
 $command1 = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait
 '@
-Set-ExecutionPolicy Bypass -Scope Process -Force
 $command2 = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait --passive --norestart --installPath `
 "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community"
 '@
+Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression -Command:$command1
 Invoke-Expression -Command:$command2
 
