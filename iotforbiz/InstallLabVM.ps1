@@ -21,12 +21,18 @@ $Packages = 'googlechrome',`
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
-<#Update Visual Studio
-$command = @'
+#Update Visual Studio
+Set-ExecutionPolicy Bypass -Scope Process -Force
+$command1 = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait
 '@
-Invoke-Expression -Command:$command
-#>
+Set-ExecutionPolicy Bypass -Scope Process -Force
+$command2 = @'
+cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait --passive --norestart --installPath `
+"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community"
+'@
+Invoke-Expression -Command:$command1
+Invoke-Expression -Command:$command2
 
 #Add Demo User to docker group
 Add-LocalGroupMember -Member demouser -Group docker-users
