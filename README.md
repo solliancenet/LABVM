@@ -10,6 +10,6 @@ This VM image will deploy a Windows 10 Pro VM with the following software:
 1. Git for Windows (bash)
 1. Visual Studio Code with the following Extenstions: IoT Edge and Omnisharp CSharp
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsolliancenet%2Flabvm%2Fmaster%2Fazure-deploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsolliancenet%2Fiotforbiz%2Flabvm%2Fmaster%2Fazure-deploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
