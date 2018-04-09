@@ -21,11 +21,12 @@ $Packages = 'googlechrome',`
 ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
-#Update Visual Studio
+<#Update Visual Studio
 $command = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait
 '@
 Invoke-Expression -Command:$command
+#>
 
 #Add Demo User to docker group
 Add-LocalGroupMember -Member demouser -Group docker-users
