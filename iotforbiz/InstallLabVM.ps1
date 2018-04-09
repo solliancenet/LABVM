@@ -22,7 +22,6 @@ ForEach ($PackageName in $Packages)
 {choco install $PackageName -y}
 
 #Update Visual Studio
-
 $command1 = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait
 '@
