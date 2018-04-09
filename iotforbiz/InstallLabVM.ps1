@@ -20,9 +20,10 @@ ForEach ($PackageName in $Packages)
 Add-LocalGroupMember -Member demouser -Group docker-users
 
 #Bring down Desktop Shortcuts
-$zipDownload = "http://YOUR-URL-HERE/FILENAME.ZIP"
-$downloadedFile = "D:\FILENAME.zip"
-$vmFolder = "C:\VM"
+$zipDownload = "https://github.com/deltadan/LABVM/blob/master/iotforbiz/shortcuts.zip?raw=true"
+$downloadedFile = "D:\shortcuts.zip"
+$vmFolder = "C:\Users\Public\Desktop"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest $zipDownload -OutFile $downloadedFile
 Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory($downloadedFile, $vmFolder)
