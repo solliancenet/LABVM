@@ -15,7 +15,8 @@ $Packages = 'googlechrome',`
             'visualstudio2017community',`
             'visualstudio2017-workload-azure',`
             'visualstudio2017-workload-manageddesktop',`
-            'visualstudio2017-workload-netweb'
+            'visualstudio2017-workload-netweb',`
+            'dotnetcore-sdk'
 
 #Install Packages
 ForEach ($PackageName in $Packages)
@@ -28,6 +29,17 @@ cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017commu
 $command2 = @'
 cmd.exe /C C:\Users\demouser\AppData\Local\Temp\chocolatey\visualstudio2017community\15.2.26430.20170605\vs_community.exe --update --quiet --wait --passive --norestart --installPath `
 "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community"
+'@
+Set-ExecutionPolicy Bypass -Scope Process -Force
+Invoke-Expression -Command:$command1
+Invoke-Expression -Command:$command2
+
+#Install Visual Studio Code Extensions
+$command1 = @'
+cmd.exe /C C:\Program Files\Microsoft VS Code\bin>code --install-extension ms-vscode.csharp
+'@
+$command2 = @'
+cmd.exe /C C:\Program Files\Microsoft VS Code\bin>code --install-extension vsciot-vscode.azure-iot-edge
 '@
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression -Command:$command1
