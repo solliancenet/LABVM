@@ -35,8 +35,8 @@ Invoke-Expression -Command:$command1
 Invoke-Expression -Command:$command2
 
 #Install Visual Studio Code Extensions
-& 'C:\Program Files\Microsoft VS Code\bin\code.cmd' --install-extension ms-vscode.csharp
-& 'C:\Program Files\Microsoft VS Code\bin\code.cmd' --install-extension vsciot-vscode.azure-iot-edge
+Set-ExecutionPolicy Bypass -Scope Process -Force; & 'C:\Program Files\Microsoft VS Code\bin\code.cmd' --install-extension ms-vscode.csharp
+Set-ExecutionPolicy Bypass -Scope Process -Force; & 'C:\Program Files\Microsoft VS Code\bin\code.cmd' --install-extension vsciot-vscode.azure-iot-edge
 
 #Add Demo User to docker group
 Add-LocalGroupMember -Member demouser -Group docker-users
