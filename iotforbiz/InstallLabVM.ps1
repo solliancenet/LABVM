@@ -1,3 +1,7 @@
+#Fix RPD Issue
+$HKLM = "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
+Set-ItemProperty -Path $HKLM -Name "SecurityLayer" -Value 0
+
 #Enable Containers
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All -All -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName Containers -All -NoRestart
