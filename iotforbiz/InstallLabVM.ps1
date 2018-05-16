@@ -1,4 +1,4 @@
-#Fix RPD Issue
+#Fix RDP Issue
 $HKLM = "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp"
 Set-ItemProperty -Path $HKLM -Name "SecurityLayer" -Value 0
 
