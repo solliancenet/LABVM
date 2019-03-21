@@ -1,7 +1,7 @@
 # LABVM
 Welcome to the Microsoft Cloud Workshop deployment repository.  Select the Name of your Lab below to deploy a fully configured LABVM.  These deployments should be performed prior to day of your Workshop.
 
-## IoT for Business
+## IoT and the Smart City
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsolliancenet%2Flabvm%2Fmaster%2Fiotforbiz%2Fazure-deploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
